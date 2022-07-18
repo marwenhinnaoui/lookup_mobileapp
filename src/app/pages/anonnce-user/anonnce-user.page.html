@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title >
+
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ng-container *ngFor="let item of lstAnnon" >
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+        {{item.subjet}}
+        </ion-card-title>
+        <ion-card-subtitle>
+        {{item.message}}
+        </ion-card-subtitle>
+        <ion-label *ngIf="item.doc" >{{ 'Cours&Tp.Fichier' | translate }} : <a (click)='download(item.doc)'>{{item.doc}}</a> </ion-label>
+        <p style='text-align: right;'>{{formatDate(item.createdAt)}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<ion-header>
+
+  <ion-toolbar mode='ios'>
+   
+    <ion-title>
+      <ion-title style="color: gray;">Absence</ion-title>
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-list lines='none' style=" background: linear-gradient(to right, #ffffff, #f8f8f8);">
+   
+    
+
+    <table class="table table-striped table-hover" style=" background-color: white;">
+      <thead>
+        <tr>
+          <th style="background-color: #e1f5fe;">Subject </th>
+          <th style="background-color: #b3e5fc; ">Hour </th>
+          <th style="background-color: #80deea;">Day</th>
+         <th></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of lstattendance" >
+          <tr>
+            <td style='font-size: 12px;width: 32%;'>{{item.seance.matiere.nomFr}}</td>
+            <td style='font-size: 12px;'>{{item.seance.heureDebut | date:' h:mm'}} to {{item.seance.heureFin | date:' h:mm'}}</td>
+            <td style='font-size: 12px;'>{{item.date | date:'d-M-y'}}</td>
+            <td style='font-size: 12px;'>
+            <ng-container *ngIf="item.type=='present';else absent" >
+             <span style='color:Green'>Present</span>
+            </ng-container>
+            <ng-template #absent>
+              <span style='color:Red'>Absent</span>
+            </ng-template>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+
+    </table>
+    
+
+
+
+
+     
+   
+
+
+
+
+
+
+  </ion-list>
+ 
+</ion-content>

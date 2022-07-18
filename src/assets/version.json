@@ -1,0 +1,17 @@
+
+{ "serverV" : "3.2.0",
+  "currentV" : "3.2.0",
+	"enabled": true,
+	"majorMsg": 
+	{ "title" : "Important mise à jour de l'application",
+	  "msg": "Mettre à jour l'application Educo",
+	  "btn": "Télécharger"
+	},
+	"minorMsg": 
+	{ "title" : "Mise à jour disponible",
+	  "msg": "Une nouvelle version est en ligne, vous voulez la télécharger ?",
+	  "btn": "Télécharger"
+	}
+}
+	
+	

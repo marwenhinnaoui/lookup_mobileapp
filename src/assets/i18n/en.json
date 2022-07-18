@@ -1,0 +1,180 @@
+{
+    "Buttons": {
+      "ajout": "Add",
+      "Enregistrer": "Save",
+      "Valider":"Confirm",
+      "Annuler":"Cancel",
+      "Confirmer":"Confirm",
+      "Quitter":"Leave",
+      "Recherche":"Research",
+      "Selectionner":"Select",
+      "Demarrer":"Start",
+      "Voyage":"Trip",
+      "Cloturer":"Close"
+    },
+
+    "Loading": {
+        "Vpatienter": "Please wait",
+        "Chargement": ""
+      },
+
+    "Login": {
+        "Code": "Code",
+        "NomU": "Username",
+        "Pass": "Password",
+        "Remember": "Remember me",
+        "Connect": "Log in",
+        "AlerteIns": "Successfully registered institution",
+        "AlerteProb": "Wrong username/password"
+    },
+
+    "Choix":{
+        "Eleve": "Student",
+        "ListE": "List of students",
+        "ListC": "List of classes",
+        "Classe": "Class"
+    },
+
+    "Emplois":{
+        "AucuneS": "No Session yet",
+        "AucuneV": "No travel yet",
+        "Lun": "Mon",
+        "Mar": "Tue",
+        "Mer": "Wed",
+        "Jeu": "Thu",
+        "Ven": "Fri",
+        "Sam": "Sat"
+    },
+
+    "Parametre":{
+        "Utilisateur": "User",
+        "NumTel": "Phone number",
+        "Deconnecter": "Log out"
+    },
+
+    "Menu":{
+        "Examen": "Exams",
+        "Carnet": "Report card",
+        "Exercice": "Exercises",
+        "Observations": "Observations",
+        "Cours&tp": "Courses & Workshops",
+        "Inscription": "Inscription",
+        "MesEleve": "My students",
+        "Voyage":"Trip"
+    },
+
+    "MenuGauche":{
+        "Bonjour": "Hello",
+        "Accueil": "Home",
+        "Examens": "Exams",
+        "Carnets": "Report card",
+        "Cours&tp": "Courses & Workshops",
+        "Inscription": "Inscription",
+        "Exercices": "Exercises",
+        "ChoixE":"Student choice",
+        "Deconnecter":"Log out",
+        "DemandeAd":"Administrative requests",
+        "ChoixC":"Class choice"
+    },
+
+    "ExamenDetail":{
+        "Notes": "Grades",
+        "Coefficient": "Coefficient",
+        "Type": "Type",
+        "Note": "Grade",
+        "StatDev": "Exam statistics"
+    },
+
+    "ExerciceDetail":{
+        "Exercice": "Exercise",
+        "Description": "Description",
+        "TravailAfaire": "Homework for"
+    },
+
+    "Observation ":{
+        "Annonces": "Announcements",
+        "Notifications": "Notifications",
+        "Message": "Message",
+        "Annonce": "Announcement"
+
+    },
+
+    "Cours&Tp":{
+        "Cours": "Courses",
+        "AjoutCours": "Add Course",
+        "AjoutTP": "Add Workshop",
+        "Tp": "Workshop",
+        "Fichier": "File",
+        "Video": "Video",
+        "Cour": "Course"
+    },
+
+    "DetailTP ":{
+        "Telecharger": "Download",
+        "TravauxP": "Workshop"
+    },
+
+    "DetailCours ":{
+        "Description": "Description",
+        "Fichier": "File",
+        "Telecharger": "Download"
+    },
+
+    "DemandeAd ":{
+        "Choix": "Choose the type of your request",
+        "ListD": "List of requests",
+        "AutreType": "Add another type",
+        "Demande":"Request"
+    },
+
+    "Absence ":{
+        "Absence": "Absence",
+        "Matiere": "Subject",
+        "Heure": "Hour",
+        "Jour": "Day",
+        "Present": "Present",
+        "Absent": "Absent"
+    },
+
+    "Eleve ":{
+        "ListE": "List of students",
+        "Pere ": "Father",
+        "Mere": "Mother",
+        "Nom&Pre": "First name and Last name",
+        "Adresse": "Address",
+        "NumTel": "Phone number",
+        "AddActuelle": "Address",
+        "LieuNaiss": "Place of birth",
+        "ListNote": "Grades list",
+        "Matiere": "Subject",
+        "Type": "Type",
+        "Coefficient": "Coefficient",
+        "Note": "Grade"
+    },
+
+    "AddEns":{
+        "Sujet": "Title",
+        "Description ": "Description",
+        "Matiere": "Subject",
+        "Document": "Document",
+        "DateLim": "Deadline",
+        "AjouterEx": "Add exercise"
+    },
+
+    "AddVoyage":{
+        "AlerteAddCircuit": "You must select a circuit",
+        "AlerteAddVahicule": "You must select a vehicle",
+        "AddVoyage ": "Add trip",
+        "Circuit": "Circuit",
+        "Type": "Type",
+        "Aller": "One way",
+        "Retour": "Return",
+        "Vehicule": "Vehicle",
+        "DateDepart": "Departure date",
+        "ListEleve": "List of students",
+        "Voyage": "Trip",
+        "AlerteDemarrer": "Do you really want to start this trip",
+        "AlerteCloturer": "Do you really want to close this trip",
+        "Notification":"Notifications"
+    }
+}

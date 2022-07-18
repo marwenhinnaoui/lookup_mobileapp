@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-buttons slot="start">
+      <ion-back-button text=''></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: gray; ">List of student</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="search()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+  <ng-container *ngFor="let item of lsteleves" >
+    <ion-item (click)='Show(item)'>
+      <ion-avatar slot="start">
+        <ion-icon class='male' name="person-circle-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>{{item.nom}}</h3>
+      </ion-label>
+    </ion-item>
+  </ng-container>
+  
+ 
+</ion-list>
+</ion-content>

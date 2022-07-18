@@ -1,0 +1,125 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  style="height: 100%; background: linear-gradient(to right, #e4e0df, #f8f8f8);">
+
+
+  <ion-grid style="overflow: auto; height: 100%; background: linear-gradient(to right, #ffffff, #f8f8f8);">
+    <ion-row style="margin-top: 12%;">
+      <ion-col   (click)='eleves()'>
+        <ion-card>
+        <div>    <ion-img src="../../assets/icon/student.png" style='fill:#00b0ff' slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>My students</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+
+      <ion-col  (click)='Excercice()' >
+        <ion-card >
+        <div>  <ion-img src="../../assets/icon/study.png"  slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>Exercises
+
+          </h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+    
+    </ion-row>
+  
+      <!-- <ion-col [hidden]='true'  >
+        <ion-card>
+        <div>  <ion-img src="../../assets/icon/trophy.png" style='fill:green' slot="start">
+          
+        </ion-img>
+        <ion-label  >
+          <h2 class='Educo' style='margin-left: 35%;'>Notes</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col> -->
+      <!-- <ion-col [hidden]='true' offset-4   >
+        <ion-card >
+        <div>        <ion-img src="../../assets/icon/punishment.png" style='fill:black' slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>Punition</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col > -->
+   
+    
+    <ion-row>
+      
+      <ion-col (click)='Devoirs()' >
+
+        <ion-card >
+        <div> <ion-img src="../../assets/icon/quiz.png"  slot="start">
+
+        </ion-img>
+       <ion-label >
+         <h2 class='Educo'>Exams</h2>
+       </ion-label></div>
+      </ion-card>
+      </ion-col>
+
+      <ion-col (click)='courstp()'>
+        <ion-card >
+        <div>   
+          <ion-img src="../../assets/icon/checklist.png"  slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>Courses & Workshops</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+   
+
+
+<ion-row>
+  <ion-col   (click)='observation()'>
+    <ion-card >
+    <div>  <ion-img src="../../assets/icon/observation.png"  slot="start">
+      
+    </ion-img>
+    <ion-label>
+      <h2 class='Educo'>Observations
+
+      </h2>
+    </ion-label></div>
+  </ion-card>
+  </ion-col>
+
+  <ion-col (click)='observation()' >
+    <ion-card >
+    <div [hidden]='true'>   
+      <ion-img src="../../assets/icon/observation.png"  slot="start">
+      
+    </ion-img>
+    <ion-label>
+      <h2 class='Educo'>Observations</h2>
+    </ion-label></div>
+  </ion-card>
+  </ion-col>
+</ion-row>
+<ion-img *ngIf="name=='Einstein academy school'" [src]="image" class="logoImg"> </ion-img>
+
+  </ion-grid>
+
+
+
+</ion-content>

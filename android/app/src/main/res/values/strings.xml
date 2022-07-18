@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Educo (Middle East)</string>
+    <string name="title_activity_main">Educo (Middle East)</string>
+    <string name="package_name">io.dndserv_enn.ltc</string>
+    <string name="custom_url_scheme">io.dndserv_enn.ltc</string>
+</resources>

@@ -1,0 +1,59 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    
+    <ion-title style='color: gray;' >
+      {{ 'ExamenDetail.Notes' | translate }}
+    </ion-title>
+    <ion-icon name="close-outline"  style="width: 45px;height: 45px; margin-left: 300px; color: darkgrey;"  (click)="close()"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-list lines='none' style="    overflow-y: auto; height: 634px; background: linear-gradient(to right, #ffffff, #f8f8f8);">
+    <ion-card >
+      <img src="assets/exam.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        
+        <ion-card-title>{{matiere}}</ion-card-title>
+        <ion-card-subtitle>{{ 'ExamenDetail.Coefficient' | translate }} : {{devoir.groupeExamenTypeMatiere.coefficient}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h4 style='font-size: 16px;'>{{ 'ExamenDetail.Type' | translate }} : {{devoir.groupeExamenTypeMatiere.examenType.nomFr}}</h4>
+       
+          <div style='display: inline-flex;'>
+            <ion-label style="color:black"><b>{{ 'ExamenDetail.Note' | translate }} : </b> </ion-label>
+          
+          <ng-container  *ngIf="returnNoteEtudiant()<=5" >
+            <p  style="color:red">{{returnNoteEtudiant()}}</p>  /20
+            </ng-container >
+            <ng-container *ngIf="returnNoteEtudiant()>5 && returnNoteEtudiant()<=10" >
+              <p style="color:orange">{{returnNoteEtudiant()}}</p>  /20
+            </ng-container>
+            <ng-container  *ngIf="returnNoteEtudiant()>10 && returnNoteEtudiant()<=15"  >
+              <div style="color:rgb(212, 212, 101)">{{returnNoteEtudiant()}}</div>  /20
+            </ng-container>
+            <ng-container  *ngIf="returnNoteEtudiant()>15" >
+              <div style="color:#aed681">{{returnNoteEtudiant()}}</div> /20 
+            </ng-container>
+            
+          </div>
+        
+          
+           
+      
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card  style="margin-top: 5%; background-color: white;">
+      <ion-card-header>
+        <ion-card-title>{{ 'ExamenDetail.StatDev' | translate }} : </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barChart></canvas>
+        </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,17 @@
+{
+  "appId": "io.dndserv_enn.ltc",
+  "appName": "Educo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "res://noujabaa_icon",
+      "iconColor": "#488AFF"
+    },
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

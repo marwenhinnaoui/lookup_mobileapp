@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664472023712",
+    "project_id": "educo-ltc",
+    "storage_bucket": "educo-ltc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664472023712:android:ab59e6d3df80a4041fcfc5",
+        "android_client_info": {
+          "package_name": "io.dndserv_enn.ltc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664472023712-mar4qvg7108gs3hhf4lrjn7ok6dojvke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZsCeYD4Bh5mrjKmwLxN1ITMqSnRdIiU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664472023712-mar4qvg7108gs3hhf4lrjn7ok6dojvke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

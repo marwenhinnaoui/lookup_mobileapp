@@ -1,0 +1,160 @@
+<ion-app>
+
+  <ion-menu side="start" menuId="Parent" contentId="main">
+    <ion-header >
+      <ion-toolbar color="">
+        <ion-item class='dist' style='--background: #f1eeee;'>
+          <ion-avatar slot="start">
+            <img src='../assets/profile.jpg'>
+          </ion-avatar>
+          <ion-label>
+            <h2 class='style1'>Hello</h2>
+            <h3 class='style1'>{{prenom+' '+nom}}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/tabs/tab2']" (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="home"></ion-icon> 
+          Home
+        </ion-item>
+        <ion-item [hidden]='true' routerLinkActive="active-link"  button [routerLink]="['/profil-pro']" routerDirection='forward' (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="person-outline"></ion-icon>
+          
+          Student 
+        </ion-item>
+      
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/devoir']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item'  src="../../assets/icon/quiz.png" slot="start"></ion-img>
+          Exams
+        </ion-item>
+        <ion-item  routerLinkActive="active-link" [routerLink]="['/lst-bulletins']"  button routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/report.png"slot="start"></ion-img>
+          Report card
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/homework']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/study.png"   slot="start"></ion-img>
+          Exercises
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/observations/annonces']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/observation.png"   slot="start"></ion-img>
+          Observations
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/courset-tp']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/checklist.png"  slot="start"></ion-img>
+          Courses & Workshops
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/demande-ad']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/demande.png"  slot="start"></ion-img>
+          Administrative requests
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button routerDirection='root' (click)='openInscri();close()'>
+          <ion-img class='menu-item' src="../../assets/icon/website.jpg"  slot="start"></ion-img>
+          Inscription
+        </ion-item>
+       <!--
+          <ion-item  routerLinkActive="active-link"  button [routerLink]="['/mes-services']" >
+          <ion-icon style="margin: 20px;"class='Educo'name="notifications-outline"></ion-icon> 
+          Notification
+        </ion-item>
+       -->
+
+        <ion-item *ngIf="isparent!='Eleve'"  routerLinkActive="active-link"  button [routerLink]="['/choice-student']"routerDirection='root' (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="sync-outline"></ion-icon>
+          Student choice
+        </ion-item>
+        
+
+
+        <ion-item  routerLinkActive="active-link"  lines="none" button [routerLink]="['/login']" (click)='disconnect()'routerDirection='root' >
+          <ion-icon style="margin: 20px;"class='Educo' name="log-out-outline"></ion-icon>
+          Log out
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-menu side="start"  menuId="Enseignant" contentId="main">
+    <ion-header >
+      <ion-toolbar color="">
+        <ion-item class='dist' style='--background: #f1eeee;'>
+          <ion-avatar slot="start">
+            <img src='../assets/profile.jpg'>
+          </ion-avatar>
+          <ion-label>
+            <h2 class='style1'>Hello</h2>
+            <h3 class='style1'>{{prenom+' '+nom}}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/acceuil-es-tabs/emploi']"  (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="home"></ion-icon> 
+          Home
+        </ion-item>
+       
+      
+       
+       
+       <!--
+          <ion-item  routerLinkActive="active-link"  button [routerLink]="['/mes-services']" >
+          <ion-icon style="margin: 20px;"class='Educo'name="notifications-outline"></ion-icon> 
+          Notification
+        </ion-item>
+       -->
+
+        <ion-item *ngIf="isparent!='Eleve'"  routerLinkActive="active-link"  button [routerLink]="['/classes']"routerDirection='root'  (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="sync-outline"></ion-icon>
+          Class choice
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/observation-en/notificationsEn']"routerDirection='root' (click)='close()'>
+          <ion-icon style="margin: 20px;"class='Educo' name="megaphone-outline"></ion-icon>
+          Observations
+        </ion-item>
+
+        <ion-item  routerLinkActive="active-link"  lines="none" button [routerLink]="['/login']" (click)='disconnect()'routerDirection='root' >
+          <ion-icon style="margin: 20px;"class='Educo' name="log-out-outline"></ion-icon>
+          Log out
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-menu side="start" menuId="Conducteur" contentId="main">
+    <ion-header >
+      <ion-toolbar color="">
+        <ion-item class='dist' style='--background: #f1eeee;'>
+          <ion-avatar slot="start">
+            <img src='../assets/profile.jpg'>
+          </ion-avatar>
+          <ion-label>
+            <h2 class='style1'>Hello</h2>
+            <h3 class='style1'>{{prenom+' '+nom}}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/acceuil-con-tabs']"  (click)='close()' >
+          <ion-icon style="margin: 20px;"class='Educo' name="home"></ion-icon> 
+          Home
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  button [routerLink]="['/acceuil-con-tabs/notifications-con']"routerDirection='root' (click)='close()'>
+          <ion-img class='menu-item' src="../../assets/icon/observation.png"   slot="start"></ion-img>
+          Notification
+        </ion-item>
+        <ion-item  routerLinkActive="active-link"  lines="none" button [routerLink]="['/login']" (click)='disconnect()'routerDirection='root' >
+          <ion-icon style="margin: 20px;"class='Educo' name="log-out-outline"></ion-icon>
+          Log out
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

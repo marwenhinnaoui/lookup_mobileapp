@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-icon style='font-size: 30px;' name="close-outline" (click)='close()'></ion-icon>
+    <ion-title></ion-title>
+    <ion-icon *ngIf="this.selectedVoyage.info.statut!='2'" style='font-size: 31px;    margin-right: 11px;' name="qr-code-outline" slot="end" (click)='scan()'></ion-icon>
+
+  </ion-toolbar>
+  <ion-toolbar  mode="ios" *ngIf="this.selectedVoyage.info.statut!='2'">
+   <ion-item>
+    <ion-label>{{ 'AddVoyage.ListEleve' | translate }}</ion-label>
+    <ion-select  [interfaceOptions]="{cssClass: 'my-custom-interface'}" [(ngModel)]="newEleve" (ionChange)='addEleve()' cancelText='Cancel'>
+      <ion-select-option class="select-interface-option" *ngFor="let item of newStudents" [value]="item"  style='text-align: right;font-size:8px ;'>{{item.nom}}
+        <p>{{"  "+item.classe}}</p></ion-select-option>
+    </ion-select>
+   </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let item of lstetudiants; index as i">
+    <ion-label>{{item.nom}}</ion-label>
+    <ion-icon slor='end' name="trash-outline" *ngIf="!selectedVoyage?.info?.statut=='1'" style="color: red;" (click)='deleteEtudiant(item,i)'></ion-icon>
+    <ion-checkbox  slor='end' *ngIf="selectedVoyage?.info?.statut=='1'" [checked]="item.status=='2'" (ionChange)='setEtudiant(item,i)'></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+<ion-button class='bottomcenter'  color='success' *ngIf="selectedVoyage?.info?.statut==null " (click)='DemarrerVoyageAlert()'>{{ 'Buttons.Demarrer' | translate }}</ion-button>
+<ion-button class='bottomcenter' color='success' *ngIf="selectedVoyage?.info?.statut=='0'" (click)='DemarrerVoyageAlert()'>{{ 'Buttons.Demarrer' | translate }}</ion-button>
+<ion-button class='bottomcenter' color='success'  *ngIf="selectedVoyage?.info?.statut=='1'" (click)='CloturerVoyageAlert()'>{{ 'Buttons.Cloturer' | translate }}</ion-button>
+
+</ion-content>

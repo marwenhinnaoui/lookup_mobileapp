@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+<ion-col   (click)='observation()'>
+  <ion-card >
+  <div>  <ion-img src="../../assets/icon/observation.png"  slot="start">
+    
+  </ion-img>
+  <ion-label>
+    <h2 class='Educo'>Notifications
+
+    </h2>
+  </ion-label></div>
+</ion-card>
+</ion-col>
+<ion-col  (click)='voyage()'>
+  <ion-card >
+    <div>  <ion-img src="../../assets/icon/voyage.webp"  slot="start">
+      
+    </ion-img>
+    <ion-label>
+      <h2 class='Educo'>Trips
+  
+      </h2>
+    </ion-label></div>
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-content>

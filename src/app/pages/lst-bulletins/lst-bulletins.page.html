@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+    <ion-title style='color: gray; '>List of report card</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-list>
+   <ng-container *ngFor="let item of lstbulletins; index as i">
+    <ion-item  *ngIf="item.bulletinClasse.affichePourParent" (click)='showBulletin(item.id)'>
+       <ion-label>Report card trimester {{i+1}}</ion-label>
+     </ion-item>
+   </ng-container>
+</ion-list>
+</ion-content>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1417" height="1417" viewBox="0 0 1417 1417">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="708.5" y1="1417" x2="708.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8dc641" stop-opacity="0.996"/>
+      <stop offset="0.992" stop-color="#158799"/>
+      <stop offset="1" stop-color="#158799"/>
+    </linearGradient>
+  </defs>
+  <rect id="Fond_en_dégradé_3" data-name="Fond en dégradé 3" class="cls-1" width="1417" height="1417"/>
+</svg>

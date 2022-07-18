@@ -1,0 +1,114 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-buttons slot="start">
+      <ion-back-button text=''></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: gray; ">Absence</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " [class.active] = "tab == 'Liste' || !tab" (click)="tab='Liste'" aria-current="page">List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active] = "tab == 'Présent'"  (click)="tab='Présent'">Present</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active] = "tab == 'Absent'"  (click)="tab='Absent'">Absent</a>
+    </li>
+   
+  </ul>
+<ion-list *ngIf="tab=='Liste'" >
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='female' name="female-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Sonia hachani</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="start">
+      <ion-item-option >Présent</ion-item-option>
+    </ion-item-options>
+    <ion-item-options side="end">
+      <ion-item-option color="danger">Absent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='male' name="male-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Emine bougherra</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger">Absent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+<ion-list *ngIf="tab=='Présent'" >
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='female' name="female-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Sonia hachani</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger">Absent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='male' name="male-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Emine bougherra</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" >Absent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+<ion-list *ngIf="tab=='Absent'" >
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='female' name="female-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Sonia hachani</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option >Présent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-item-sliding>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon class='male' name="male-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h3>Emine bougherra</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option >Présent</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>

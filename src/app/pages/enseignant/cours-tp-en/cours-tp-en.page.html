@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button text=''></ion-back-button>
+    </ion-buttons>
+    <ion-title style='color: gray; '>
+      {{ 'Menu.Cours&tp' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color='primary' [hidden]='!switch'  (click)='AjoutCours()'><ion-icon name="add-outline"></ion-icon></ion-button>
+      <ion-button color='primary' [hidden]='switch'  (click)='AjoutTP()'><ion-icon name="add-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-list style="overflow:auto;height: 100%;background: linear-gradient(to right, #ffffff, #f8f8f8);">
+  
+    <ion-item>
+      <ul class="nav nav-tabs" >
+        <li class="nav-item"  (click)="switchCoursTp(true,'Cours','TP')">
+          <a class="nav-link active" id='Cours'  aria-current="page" >{{ 'Cours&Tp.Cour' | translate }}</a>
+        </li>
+        <li class="nav-item"  (click)="switchCoursTp(false,'TP','Cours')">
+          <a class="nav-link" id='TP' >Workshop</a>
+        </li>
+       
+       
+      </ul>
+    </ion-item>
+    <ng-container *ngIf="switch">
+      <ng-container   *ngFor="let item of lstcours" >
+        <ion-item lines="unset" >    
+          <!-- *ngIf="!exist(item.matiere)" -->
+          <ion-card style="width: 100%" (click)="showModalCours(item)">
+            <ion-item>
+              <ion-icon
+                name="book-outline"
+                slot="start"
+                class="nojabaa-color"></ion-icon>
+                <ion-label
+                style="
+                  color: black;
+                  font-size: 16px;
+                  font-weight: 500;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+              {{getmatiere22(item.matiere)}}
+              </ion-label>
+            </ion-item>
+            
+         
+           
+  
+            <ion-card-content style="color: black">
+              <ion-icon name="calendar-outline"></ion-icon><span  >{{item.createdAt | date :'dd/M/yy'}}</span>
+              
+              <ul>
+                <li>
+                  <b >{{item.subjet}}</b>
+                </li>
+                <p  class="overflow" *ngIf="item.description"  [innerHtml]='item.description'></p>  
+                <ion-label *ngIf="item.doc" >{{ 'Cours&Tp.Fichier' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.doc}}</a> </ion-label>
+                <ion-label *ngIf="item.video" >{{ 'Cours&Tp.Video' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.video}}</a> </ion-label>
+              
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!switch">
+      <ng-container   *ngFor="let item of lsttp" >
+        <ion-item lines="unset" >
+          <!-- *ngIf="!exist(item.matiere.nomFr)" -->
+          <ion-card style="width: 100%"  (click)="showModalTP(item)">
+            <ion-item>
+              <ion-icon
+                name="desktop-outline"
+                slot="start"
+                class="nojabaa-color"></ion-icon>
+              <ion-label
+                style="
+                  color: black;
+                  font-size: 16px;
+                  font-weight: 500;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ;
+                "
+                >
+               {{getmatiere22(item.matiere)}}
+
+              </ion-label>
+
+            </ion-item>
+
+            
+  
+            <ion-card-content style="color: black">
+              <ion-icon name="calendar-outline"></ion-icon><span style="margin-left: 5px;">{{item.createdAt | date : 'dd/M/yy'}}</span> 
+              <label></label>
+              <ul>
+                <li>
+                  <b >{{item.subjet}}</b>  
+         
+                </li>
+                <p  class="overflow" *ngIf="item.description" [innerHtml]='item.description' ></p>  
+                <ion-label *ngIf="item.doc" >{{ 'Cours&Tp.Fichier' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.doc}}</a> </ion-label>
+                <ion-label *ngIf="item.video" >{{ 'Cours&Tp.Video' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.video}}</a> </ion-label>
+
+              </ul>
+            </ion-card-content>
+  
+          </ion-card>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+    
+   
+  </ion-list>
+</ion-content>

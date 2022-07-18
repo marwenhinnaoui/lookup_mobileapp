@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  style="height: 100%; background: linear-gradient(to right, #e4e0df, #f8f8f8);">
+
+
+  <ion-grid style="overflow: auto; height: 100%; background: linear-gradient(to right, #ffffff, #f8f8f8);">
+    <ion-row>
+      <ion-col  (click)='devoir()'>
+
+        <ion-card >
+        <div> <ion-img src="../../assets/icon/quiz.png"  slot="start">
+
+          
+        </ion-img>
+       <ion-label >
+         <h2 class='Educo'>Exams</h2>
+       </ion-label></div>
+      </ion-card>
+      </ion-col>
+      <ion-col  (click)='evaluation()'>
+        <ion-card >
+        <div>  <ion-img src="../../assets/icon/report.png" style='fill:green' slot="start">
+          
+        </ion-img>
+        <ion-label  >
+          <h2 class='Educo' >{{ 'Menu.Carnet' | translate }}</h2>
+        </ion-label>
+      </div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  
+    
+   
+    <ion-row>
+
+      <ion-col   (click)='homework()'>
+        <ion-card >
+        <div>  <ion-img src="../../assets/icon/study.png"  slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>{{ 'Menu.Exercice' | translate }}
+
+          </h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+      <ion-col   (click)='observation()'>
+        <ion-card >
+        <div>  <ion-img src="../../assets/icon/observation.png"  slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>{{ 'Menu.Observations' | translate }}
+
+          </h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row [hidden]="true">
+      <ion-col  (click)='punition()'>
+        <ion-card >
+        <div>        <ion-img src="../../assets/icon/punishment.png" style='fill:black' slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>Punition</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col >
+      <ion-col  (click)='presence()' >
+        <ion-card class='centeredcard'>
+        <div>    <ion-img src="../../assets/icon/student.png" style='fill:#00b0ff' slot="start">
+          
+        </ion-img>
+        <ion-label>
+          <h2 class='Educo'>Absence</h2>
+        </ion-label></div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+   
+<ion-row>
+  <ion-col (click)='CoursTp()'>
+    <ion-card >
+    <div>   
+      <ion-img src="../../assets/icon/checklist.png"  slot="start">
+      
+    </ion-img>
+    <ion-label>
+      <h2 class='Educo'>{{ 'Menu.Cours&tp' | translate }}</h2>
+    </ion-label></div>
+  </ion-card>
+  </ion-col>
+  <ion-col  (click)='openInscri()'>
+    <ion-card >
+    <div>   
+      <ion-img src="../../assets/icon/website.jpg"  slot="start">
+      
+    </ion-img>
+    <ion-label>
+      <h2 class='Educo'>Inscription</h2>
+    </ion-label></div>
+  </ion-card>
+  </ion-col>
+</ion-row>
+<ion-img [src]="image" class="logoImg"> </ion-img>
+  </ion-grid>
+
+
+
+</ion-content>

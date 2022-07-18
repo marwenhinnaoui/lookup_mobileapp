@@ -1,0 +1,36 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    
+    <ion-title style='color: gray;' >
+      Announcement
+    </ion-title>
+    <ion-icon name="close-outline"  style="width: 45px;height: 45px; margin-left: 300px; color: darkgrey;"  (click)="close()"></ion-icon>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-list lines='none' style=" height: 634px; background: linear-gradient(to right, #ffffff, #f8f8f8);     overflow-y: auto;">
+    <ion-card >
+      <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        
+        <ion-card-title>{{annonce.subjet}}</ion-card-title>
+        <ion-card-subtitle>Message : {{annonce.message}}</ion-card-subtitle>
+        <p style='text-align: right;'>{{formatDate(annonce.createdAt)}}</p>
+      </ion-card-header>
+      <ion-card-content>
+      <ion-img  *ngIf="this.docLastP === 'jpg' || this.docLastP ==='jpeg'|| this.docLastP ==='bmp'|| this.docLastP ==='gif'|| this.docLastP ==='png'|| this.docLastP ==='webp'" [src]="image" class="logoImg"> </ion-img>
+      <div *ngIf="annonce.doc">
+      <ion-label  >{{ 'Cours&Tp.Fichier' | translate }} : <a>{{annonce.doc}}</a> </ion-label>
+      <p style='text-align: right;' *ngIf="!(this.docLastP === 'jpg' || this.docLastP ==='jpeg'|| this.docLastP ==='bmp'|| this.docLastP ==='gif'|| this.docLastP ==='png'|| this.docLastP ==='webp')" (click)='download(annonce.doc)'><b>Télécharger</b> </p>
+     </div>
+          
+           
+      
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+</ion-content>

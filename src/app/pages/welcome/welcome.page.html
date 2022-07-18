@@ -1,0 +1,59 @@
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+ 
+  <ion-header [translucent]="true">
+    <ion-toolbar mode='ios'>
+      <ion-title >
+        <ion-img class='toolimage' src='../../assets/title.png'></ion-img>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content fullscreen scroll-y="false">
+  <ion-slides>
+
+    <ion-slide>
+      <div class="slide">
+        <img src="../../../assets/welcome2.PNG" style="border-radius: 14%;"/>
+        <h2 class='Educo' style=" font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Education pour les enfants, vaut mieux qu'un tas d'argent.
+        </h2>
+      </div>
+      <ion-button (click)='test()'style="margin-top: 18%;" fill="clear">Glisser <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide">
+        <img src="../../../assets/welcome4.PNG" style="border-radius: 14%; margin-top: 35%;"/>
+        <h2 style=" margin-top: 20%; color: #ff8f00; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> L'apprentissage est une magnifique aventure <br> d'une vie
+        </h2>
+      </div>
+      <ion-button style="margin-top: 8%;" fill="clear" (click)="choice()"> Ignorer <ion-icon slot="end"></ion-icon></ion-button>
+      <ion-button style="margin-top: 7%;" fill="clear">Glisser <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+
+    </ion-slide>
+
+    
+
+      <ion-slide>
+        <div class="slide">
+          <img src="../../../assets/welcome5.PNG" style="border-radius: 14%; margin-top: 40%;"/>
+          <h2 style=" margin-top: 18%; color: #f06292  ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> 
+            Educo: un pas vers l'école de demain
+          </h2>
+        </div>
+        <ion-button  style="margin-top: 16%;" fill="clear" (click)="choice()"> Cliquez ici <ion-icon slot="end" ></ion-icon></ion-button>
+  
+      </ion-slide>
+  
+  
+
+ 
+   
+
+  </ion-slides>
+</ion-content>
+
+
+

@@ -1,0 +1,68 @@
+<ion-header [translucent]="true" *ngIf="localisation == '/tabs/notifications'">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<ion-list>
+ <ng-container *ngIf="lstnotif.length!=0" >
+  <ng-container *ngFor="let item of lstnotif" >
+    
+    <ion-item  *ngIf="item.readAt else notread"  (click)='checkNotif(item)'>
+      <ion-avatar slot="start">
+          <ion-icon *ngIf="(item.sujet === 'annonce')" class='notif-icon' style="color: rgb(170, 155, 155);" name="megaphone-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'absence')" style="color: rgb(248, 62, 62);" class='notif-icon' name="person-remove-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'transport')" class='notif-icon' style="color: rgb(60, 231, 8);"  name="bus-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'devoir')" class='notif-icon' style="color: rgb(14, 134, 247);"  name="document-text-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'message')" class='notif-icon' style="color: rgb(161, 246, 252);"  name="mail-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'exercice')" class='notif-icon' style="color: rgb(247, 185, 14);"  name="document-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'cours')" class='notif-icon' style="color: rgb(118, 104, 248);"  name="clipboard-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'tp')" class='notif-icon' style="color: rgb(149, 67, 243);"  name="create-outline"></ion-icon>
+        </ion-avatar>
+      <ion-label class="ion-text-wrap" (click)="getId(item)"> 
+        <p>{{item.data.message}}</p>   
+      </ion-label>
+    </ion-item>
+
+
+    <ng-template #notread>
+      <ion-item color='primary' class='notread' (click)='checkNotif(item)'>
+        <ion-avatar slot="start">
+          <ion-icon *ngIf="(item.sujet === 'annonce')" class='notif-icon' style="color: rgb(170, 155, 155);" name="megaphone-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'absence')" style="color: rgb(248, 62, 62);" class='notif-icon' name="person-remove-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'transport')" class='notif-icon' style="color: rgb(60, 231, 8);"  name="bus-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'devoir')" class='notif-icon' style="color: rgb(14, 134, 247);"  name="document-text-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'exercice')" class='notif-icon' style="color: rgb(247, 185, 14);"  name="document-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'message')" class='notif-icon' style="color: rgb(161, 246, 252);"  name="mail-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'cours')" class='notif-icon' style="color: rgb(118, 104, 248);"  name="clipboard-outline"></ion-icon>
+          <ion-icon *ngIf="(item.sujet === 'tp')" class='notif-icon' style="color: rgb(149, 67, 243);"  name="create-outline"></ion-icon>
+
+        </ion-avatar>
+        <ion-label class="ion-text-wrap" (click)="getId(item)">
+          
+          <p >{{item.data.message}}</p>
+        
+        </ion-label>
+       
+      </ion-item>
+    </ng-template>
+    
+  </ng-container>
+ </ng-container>
+ 
+  
+  
+</ion-list>
+<ion-infinite-scroll threshold="100px" id="infinite-scroll">
+  <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading......">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

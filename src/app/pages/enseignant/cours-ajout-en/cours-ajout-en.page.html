@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)='dismiss()'><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title style="color: gray; ">{{ 'Cours&Tp.AjoutCours' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-card>
+<ion-card-header>
+  <img src='assets/exam.jpg'>
+</ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="stacked">Title : </ion-label>
+      <ion-input type='text' [(ngModel)]="NewExc.subjet"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Description : </ion-label>
+      <ion-input type='text' [(ngModel)]="NewExc.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Subject  : </ion-label>
+      <ion-select [(ngModel)]="NewExc.matiere" placeholder="Select" >
+       <ng-container *ngFor="let item of lstmatieres" >
+        <ion-select-option [value]="'/api/matieres/'+item.matiere.id">{{item.matiere.nom}}</ion-select-option>
+
+       </ng-container>
+       
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Document : </ion-label><br>
+      <ion-input id='filename' name='filename' type='file' (change)='appendfile($event.target.files)'></ion-input>
+     <ng-container *ngIf="this.NewExc.doc" >
+      <label for='filename'>{{this.NewExc.doc.name}}</label>
+     </ng-container>
+     
+    </ion-item>
+   
+    <ion-button color='success' [disabled]="!(NewExc.subjet && NewExc.description && NewExc.matiere)" (click)='Ajouter()'>Add</ion-button>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+

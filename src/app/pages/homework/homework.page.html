@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color: gray; ">{{ 'Menu.Exercice' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-list style="height: 100%;  background: linear-gradient(to right, #ffffff, #f8f8f8);">
+
+    
+<ng-container *ngFor="let item of lsthomework" >
+  <ion-item lines='unset'>
+    <ion-card style='width: 100%;' (click)="showModal(item)">
+      <ion-item>
+        <ion-icon name="book-outline" slot="start" class="nojabaa-color"></ion-icon>
+        <ion-label style="color: black; font-size: 16px;font-weight: 500;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;; " >{{item.matiere.nomFr}}</ion-label>
+         <ion-label *ngIf="item.enseignant" style="color: grey; font-size: 12px;   margin-top: 17%;right: 10px;position: absolute;" ><ion-icon name="person-outline"></ion-icon> {{item.enseignant.firstname}}  {{item.enseignant.lastname}}</ion-label>
+      </ion-item>
+    
+      <ion-card-content style="color:black  ">
+        <ion-icon name='calendar-outline'></ion-icon> {{item.createdAt | date:'dd-MM-yyyy'}}
+        <ul>
+          <li>
+            <b >{{item.subject}}</b>  
+            </li>
+       
+          <!-- <p  class="overflow" *ngIf="item.description">{{item.description}}</p>   -->
+          <ion-content [innerHtml]='item.description'> </ion-content>
+
+          <ion-label *ngIf="item.doc" >{{ 'Cours&Tp.Fichier' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.doc}}</a> </ion-label>
+        </ul>
+      
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+</ng-container>
+
+   
+
+
+
+
+  </ion-list>
+</ion-content>

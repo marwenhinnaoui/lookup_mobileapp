@@ -1,0 +1,61 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+<ion-content >
+<body>
+  <div class="container">
+    <div class="row ">
+
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto ">
+        <div class="card card-signin my-5 ">
+          <div class="card-body">
+           
+            <ion-img src='../assets/title.png' class="center customimg"></ion-img>
+            <h5 class="card-title text-center salute" ></h5>
+            <div class="form-signin">
+              <div class="form-label-group dis" >
+                <ion-label for="inputCode" class="salute">
+                  <ion-icon name="information-circle-outline"></ion-icon> {{ 'Login.Code' | translate }}  : </ion-label>
+                <ion-input type="text" id="inputCode" [(ngModel)]='code'  class="form-control" placeholder='Institution code'  required autofocus></ion-input>
+                
+              </div>
+              <div class="form-label-group dis">
+                <ion-label for="inputEmail" class="salute">
+                  <ion-icon name="person-outline" style='font-size: 20px;'></ion-icon>  {{ 'Login.NomU' | translate }} : </ion-label>
+                <ion-input type="text" id="inputEmail" [(ngModel)]='email'  class="form-control" placeholder="Username"  required autofocus></ion-input>
+                
+              </div>
+
+              <div class="form-label-group dis">
+                <ion-label for="inputPassword"  class="salute">
+                  <ion-icon style='font-size: 20px;' name="lock-closed-outline">
+                  </ion-icon>{{ 'Login.Pass' | translate }} : </ion-label>
+                <ion-input *ngIf="!show" type="password" id="inputPassword" [(ngModel)]='pass' class="form-control" placeholder='*********'    required></ion-input>
+                <ion-input *ngIf="show" type="text" id="inputPassword" [(ngModel)]='pass' class="form-control" placeholder='*********'    required></ion-input>
+                <ion-icon *ngIf="show" (click)='showpass()'class='eyepass'name="eye"></ion-icon>
+                <ion-icon *ngIf="!show"(click)='showpass()' class='eyepass' name="eye-off-outline"></ion-icon>
+              </div>
+              <div class="form-label-group row">
+                <div class="col-4"></div>
+                <div class="col-2"></div>
+              <div class="col-6">  
+                <input type="checkbox" [(ngModel)]="status" (change)="changestatus()" name="" id="">
+                <ion-label   class="saluteSmall">
+                  {{ 'Login.Remember' | translate }}</ion-label>
+              </div>
+            </div>
+              <hr>
+              
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase noujabaa dis" (click)='login()'>{{ 'Login.Connect' | translate }}</button> 
+              </div>
+              
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</ion-content>

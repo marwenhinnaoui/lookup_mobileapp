@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'DroidArabicNaskhBold';
+    src: url('/fonts/DroidArabicNaskhBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidArabicNaskhRegular';
+    src: url('/fonts/DroidArabicNaskhRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{direction: ltr; font-size: 8px; font-family: 'DroidArabicNaskhBold'; }
+        table { border-collapse: collapse; width:100%; margin: 0 0 10px 0;}
+        table {border:1px solid #777;}
+        table th { border-bottom:1px solid #ccc; text-align: center; padding:0; color:#fff;vertical-align:middle}
+        table td { padding:3px;  text-align: center; border:1px solid #777;  vertical-align:middle}
+        img{ width: 120px; max-height: 50px}
+        body {
+            background: rgb(204,204,204);
+        }
+        page {
+            padding: 30px;
+            background: white;
+            display: block;
+            margin: 0 auto 0.5cm;
+            box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+        }
+        page[size="A4"] {
+            width: 19cm;
+            height: 26cm;
+        }
+
+        page[size="A4"][layout="landscape"] {
+            width: 29.7cm;
+            height: 21cm;
+        }
+
+        .mat-head{
+            font-size: larger;
+            background-color: #198cdb;
+            padding: 5px;
+        }
+        .mat-foot{
+            font-size: larger;
+            font-weight: 700;
+            background-color: #51a3dc;
+            padding: 3px;
+        }
+        .bg-gray{
+            background-color: #f2f2f2;
+        }
+        .mat-name{
+            background: #87c9fa;
+            min-width: 60px;
+        }
+        .mat-sub{
+            background: #72eaff;
+            font-size: 12px;
+        }
+        table.width33 tr td {
+            width: 33%;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            body, page {
+                box-shadow: unset;
+            }
+            @page {
+                size: auto;
+                margin: 0;
+            }
+            page { page-break-after: always; }
+
+            .print{visibility: hidden;}
+        }
+        img{
+            display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+            content: url(https://primaire.educo-solution.com/images/logo.png)  !important;
+        }

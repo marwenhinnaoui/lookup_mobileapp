@@ -1,0 +1,23 @@
+body{
+    background-color: #F6F6F6 !important;
+}
+ion-list{
+    background: inherit;
+}
+ion-item{
+    background: inherit; 
+}
+.title{
+    margin: 6%;
+    font-size: 20px;
+    font-weight: 500;
+}
+.ion-color-primary{
+    --ion-color-base: inherit !important;
+    --ion-color-contrast: black !important;
+    --ion-color-shade: black!important;
+}
+.main-div{
+    overflow: auto;
+height: 94%;
+}

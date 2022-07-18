@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+      <ion-img class='toolimage' src='../../assets/title.png'></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+<img src='../../assets/profile.jpg'>
+  <ion-list style="margin-top: 10%;">
+    <ion-item  routerLinkActive="active-link"  button [routerLink]="['/profil-pro']" routerDirection='forward'>
+      <ion-icon slot="start" style="margin: 20px;"class='Educo'  name="person-outline"></ion-icon>
+      <ion-label>
+        <h2>First name and Last name</h2>
+        <h3>{{prenom+' '+nom}}</h3>
+      </ion-label>
+      
+    </ion-item>
+  
+    <ion-item   routerLinkActive="active-link" button [routerLink]="['/MyClients']" routerDirection='forward'>
+      <ion-icon slot="start" style="margin: 20px;"class='Educo' name="call-outline"></ion-icon>
+      <ion-label>
+        <h2>Phone number</h2>
+        <ng-container *ngIf="Phone!='null';else nophone" >
+       <h3>{{Phone}}</h3>
+        </ng-container>
+        <ng-template #nophone>
+         <h3>Don't have a phone number</h3>
+        </ng-template>
+      </ion-label>
+    </ion-item>
+    <ion-item [hidden]='true' button slot="start"  >
+      <ion-icon style="margin: 20px;"class='Educo' name="lock-open-outline"></ion-icon> 
+      <ion-label>Changer Mot de Passe</ion-label>
+    </ion-item>
+    <ion-item slot="start" (click)='disconnect()' button [routerLink]="['/login']" lines="none">
+      <ion-icon style="margin: 20px;"class='Educo' name="log-out-outline"></ion-icon> 
+      <ion-label>Log out</ion-label>
+    </ion-item>
+   
+   
+  </ion-list>
+
+
+</ion-content>

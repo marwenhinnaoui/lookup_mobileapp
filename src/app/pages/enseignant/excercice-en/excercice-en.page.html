@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-buttons slot="start">
+      <ion-back-button text=''></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)='Ajout()'><ion-icon name="add-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title style="color: gray; ">{{ 'Menu.Exercice' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list style="height: 100%;  background: linear-gradient(to right, #ffffff, #f8f8f8);">
+
+    
+<ng-container *ngFor="let item of lsthomework" >
+  <ion-item lines='unset'>
+    <ion-card style='width: 100%;' (click)="showModal(item)">
+      <ion-item>
+        <ion-icon name="book-outline" slot="start" class="nojabaa-color"></ion-icon>
+        <ion-label style="color: black; font-size: 16px;font-weight: 500;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;; " >{{getmatiere(item.matiere)}}</ion-label>
+         <ion-label style="color: grey; font-size: 12px;   margin-top: 17%;right: 10px;position: absolute;" ><ion-icon name="person-outline"></ion-icon> {{getenseignant(item.enseignant)}}</ion-label>
+      </ion-item>
+    
+      <ion-card-content style="color:black  ">
+        <ion-icon name='calendar-outline'></ion-icon> {{item.createdAt | date:'d/M/yy'}}
+        <ul>
+          <li>
+            <b >{{item.subject}}</b>  
+            </li>
+       
+          <!-- <p  class="overflow" *ngIf="item.description">{{item.description}}</p>   -->
+          <ion-content [innerHtml]='item.description'> </ion-content>
+
+          <ion-label *ngIf="item.doc" >{{ 'Cours&Tp.Fichier' | translate }} : <a style="color : var(--ion-color-primary, #3880ff);">{{item.doc}}</a> </ion-label>
+        </ul>
+      
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+</ng-container>
+
+   
+
+
+
+
+  </ion-list>
+</ion-content>

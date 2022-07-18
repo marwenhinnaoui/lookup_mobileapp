@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="540" height="540" viewBox="0 0 540 540">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+        fill: url(#radial-gradient);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="269.875" cy="270.906" r="270.938" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0dccff"/>
+      <stop offset="1" stop-color="#4760ff"/>
+    </radialGradient>
+  </defs>
+  <path id="Fond_en_dégradé_3" data-name="Fond en dégradé 3" class="cls-1" d="M254,0C447.141-2.987,602.713,178.6,519,376c-40.377,95.213-115.351,144.378-233,164-43.575,7.268-87.906-8.422-116-20C60.912,475.044-47.673,333.954,17,174,46.813,100.264,100.28,46.836,174,17L227,3Z"/>
+</svg>

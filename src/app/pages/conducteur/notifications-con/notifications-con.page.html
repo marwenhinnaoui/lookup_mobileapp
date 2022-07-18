@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-title >
+
+      <ion-img class="toolimage"  src='../../assets/title.png'></ion-img>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<ion-list>
+ <ng-container *ngIf="lstnotif.length!=0" >
+  <ng-container *ngFor="let item of lstnotif" >
+    <ion-item  *ngIf="item.readAt else notread" >
+      <ion-avatar slot="start">
+        <ion-icon class='notif-icon' name="information-circle-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        
+        <p >{{item.data.message}}</p>
+      
+      </ion-label>
+     
+    </ion-item>
+    <ng-template #notread>
+      <ion-item color='primary' class='notread' >
+        <ion-avatar slot="start">
+          <ion-icon class='notif-icon' name="information-circle-outline"></ion-icon>
+        </ion-avatar>
+        <ion-label class="ion-text-wrap">
+          
+          <p >{{item.data.message}}</p>
+        
+        </ion-label>
+       
+      </ion-item>
+    </ng-template>
+    
+  </ng-container>
+ </ng-container>
+ 
+  
+  
+</ion-list>
+<ion-infinite-scroll threshold="100px" id="infinite-scroll">
+  <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

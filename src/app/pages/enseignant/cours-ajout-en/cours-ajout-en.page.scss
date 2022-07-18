@@ -1,0 +1,18 @@
+ion-card{
+    height: 100%;
+    overflow: auto;
+}
+ion-button{
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+    margin-top: 36%;
+}
+#filename{
+    position: absolute;
+    opacity: 0;;
+}
+#fileup{
+    padding-top: 30px;
+    font-size: 27px;
+}

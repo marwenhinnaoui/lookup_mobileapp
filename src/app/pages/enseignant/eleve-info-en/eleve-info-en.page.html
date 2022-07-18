@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<ion-header [translucent]="true">
+  <ion-toolbar mode='ios'>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)='dismiss()'><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    
+    <ion-title style="color: gray; ">{{ 'Choix.ListE' | translate }}</ion-title>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <img [src]='img' [hidden]='img==null'> 
+  <img src='assets/profile.jpg' [hidden]='img!=null'> 
+  <ion-card-header>
+
+  </ion-card-header>
+  <ion-card-content>
+   <ion-card-subtitle class="name"> <b>{{nom}}</b> </ion-card-subtitle>
+
+   <div *ngIf="!( adr==='') || (adr === null)">
+   <ion-card-title >Address : </ion-card-title>
+   <ion-card-subtitle  *ngIf="!( adr==='') || (adr === null)">Address : {{adr}}</ion-card-subtitle>
+   <ion-card-subtitle  *ngIf="!( lieu==='') || (lieu === null)">Address:{{lieu}}</ion-card-subtitle>
+  </div>
+
+   <div *ngIf="pere.firstname != null">
+   <ion-card-title>Father : </ion-card-title>
+   <ion-card-subtitle>First name and Last name  : {{pere.firstname+' '+pere.lastname}}</ion-card-subtitle>
+   <ion-card-subtitle *ngIf="!( pere.phone==='0') || (pere.phone === null)">Phone number : {{pere.phone}}</ion-card-subtitle>
+  </div>
+
+   <div *ngIf="mere.firstname != null">
+    <ion-card-title>Mother : </ion-card-title>
+    <ion-card-subtitle>First name and Last name  : {{mere.firstname+' '+mere.lastname}}</ion-card-subtitle>
+    <ion-card-subtitle *ngIf="mere.phone != null">Phone number : {{mere.phone}}</ion-card-subtitle>
+   </div>
+
+   <div *ngIf="lstnotes.length">
+   <ion-card-title>Grades list : </ion-card-title>
+
+      <table class="table">
+        <thead>
+         <tr>
+          <th>Subject</th>
+          <th>Type</th>
+          <th>Coefficient</th>
+          <th>Grade</th>
+         </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of lstnotes" >
+                 <tr>
+                   <td>{{item.matiere}}</td>
+                   <td >{{item.type}}</td>
+                   <td>{{item.coef}}</td>
+                   <td [ngStyle]='{"color": returncolor(item.note)}'>{{item.note}}</td>
+                 </tr>
+          </ng-container>
+          
+        </tbody>
+      </table>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

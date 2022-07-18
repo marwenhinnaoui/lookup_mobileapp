@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-icon style='font-size: 30px;' name="close-outline" (click)='close()'></ion-icon>
+    <ion-title>Add trip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      Add trip
+    </ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>{{ 'AddVoyage.Circuit' | translate }}</ion-label>
+    <ion-select [(ngModel)]="newVoy.circuit" interface="popover">
+      <ion-select-option *ngFor="let item of lstCircuit" [value]="item.id">{{item.nomFr}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{ 'AddVoyage.Type' | translate }}</ion-label>
+    <ion-select [(ngModel)]="newVoy.type" interface="popover">
+      <ion-select-option value="0">One way</ion-select-option>
+      <ion-select-option value="1">Return</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{ 'AddVoyage.Vehicule' | translate }}</ion-label>
+    <ion-select [(ngModel)]="newVoy.vehicule" interface="popover" >
+      <ion-select-option *ngFor="let item of lstVehicule" [value]="item.id">{{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">{{ 'AddVoyage.DateDepart' | translate }}</ion-label>
+    <ion-input [(ngModel)]="newVoy.datedepart" type="datetime-local">
+      <ion-icon  name='calendar' slot="end"></ion-icon>
+    </ion-input>   
+  </ion-item>
+  
+</ion-list>
+<ion-button class='bottomcenter' color='success' (click)='ajouterVoyage()'>{{ 'Buttons.ajout' | translate }}</ion-button>
+</ion-content>

@@ -1,0 +1,40 @@
+.salute{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    }
+    .selected{
+        --color:black   ;
+        --background-activated: #1682ca;
+        --background: #167bbf;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .badge{
+        top: 40px;right: 5px;position: absolute;
+    }
+    .unselected{
+        --color:black   ;
+        --background-activated: #ffffff;
+        --background: #f4f5f8;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .selection{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          --padding-top: 25px;
+          margin-right:5%;
+          --border-radius: 6px;
+          margin: -1px 8px;
+          height: 3.8em;
+          font-size: 19px;
+         font-weight: 500;;
+          --padding-bottom: 25px;
+          --padding-start: 10px;
+          --padding-end: 10px;
+    }
+    p{
+        color:black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h5{
+       // position: absolute;
+    }

@@ -1,0 +1,27 @@
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)='openmenu()'>
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="menu-con">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="voyages-con">
+      <ion-icon name="calendar-outline"></ion-icon>
+    </ion-tab-button>
+
+   
+      <ion-tab-button tab="notifications-con">
+        <ion-badge color="primary">{{nb}}</ion-badge>
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-tab-button>
+  
+   
+    
+  </ion-tab-bar>
+  
+
+</ion-tabs>
